@@ -112,6 +112,38 @@ so that the whole figure can be inspected without any risk of tuning on test dat
 5. **The best CV accuracy barely depends on dimension** (PCA-50 0.952, PCA-200 0.949, raw 784 0.948).
    Independent evidence for the main claim, obtained without touching the test set.
 
+## Control group: a small CNN
+
+Everything above holds the feature space fixed and varies the boundary. A convnet changes both,
+so it is the natural control: if the whole "kernel gain" story were about boundary shape, a model
+that *learns* its own translation-equivariant features should still be the one to beat.
+
+Architecture: conv(16)-BN-ReLU-pool → conv(32)-BN-ReLU-pool → FC(128)-dropout → FC(10); Adam, 40
+epochs max with early stopping on a 10% stratified slice of the training set, 2 seeds × 2 trials.
+No augmentation — the point is the model class, not a tuned pipeline.
+
+| n | Small CNN | RBF SVM | QDA (eigen) | Linear SVM |
+|---|---|---|---|---|
+| 500 | 0.9144 ± 0.0148 | 0.9162 | **0.9290** | 0.8660 |
+| 1,000 | 0.9428 ± 0.0040 | 0.9342 | **0.9490** | 0.8905 |
+| 2,000 | **0.9580 ± 0.0073** | 0.9485 | 0.9525 | 0.9020 |
+
+1. **The CNN only wins at the largest sample size, and by half a point.** 0.9580 vs 0.9525 for
+   QDA on 50 PCA dimensions. The claimed "deep learning" advantage is real but of the same order
+   as the kernel-vs-linear gap (+4.7 pp) that this project set out to explain — not larger.
+2. **At n ≤ 1,000 it loses to a quadratic discriminant.** With 50 PCA components and a
+   quadratic boundary you are already at 94.9%, and the CNN has not yet amortised its parameters.
+3. **Seed variance at n = 500 is larger than most effects discussed here** (0.9025–0.9360, a 3.3 pp
+   spread over four runs). Any single-run CNN comparison at this scale is not a measurement.
+4. **In-writer validation is optimistic by 2.4 pp on average** (validation accuracy minus test
+   accuracy over all 12 runs). The validation slice is carved from the training set, so it shares
+   writers with training while the test set does not. Early stopping on it therefore stops at a
+   slightly wrong place, and any hyper-parameter chosen on it inherits the same bias. This is a
+   concrete argument for why the assignment's writer-disjoint split matters.
+5. **It is not the expensive option here.** Training one CNN takes 1.2 / 2.0 / 3.5 s at
+   n = 500 / 1,000 / 2,000 on 4 CPU threads — less than one RBF SVM grid search cell (12–25 s).
+   Whatever keeps deep models out of this project, it is not compute.
+
 ## Dataset and protocol
 
 - Provided subset of MNIST: 4,000 images, 10 classes, 400 each, 784-d pixel vectors.
@@ -139,6 +171,9 @@ python run_gamma_sensitivity.py  # (C, gamma) surface, training CV  (~18 min)
 python analyze.py              # markdown tables  -> results/
 python figures.py              # figures          -> results/figs/
 python confusion.py bdr_full pca50   # per-class recall + confusion matrix
+
+pip install -r requirements-cnn.txt   # optional, only for the control group
+python cnn_control.py          # small CNN, 2 sizes x 2 seeds      (~1 min)
 ```
 
 `run_grid.py` and `run_sweep.py` append one JSON record per cell to `results/*.jsonl` and skip
@@ -157,6 +192,7 @@ run_grid.py        stage 1: classifier x preprocessing, 2 trials
 run_sweep.py       stage 2: accuracy vs retained dimension
 run_learning_curve.py     stage 3: accuracy vs training-set size
 run_gamma_sensitivity.py  stage 4: (C, gamma) surface from training-set CV
+cnn_control.py     control group: small CNN vs the classical models
 analyze.py         aggregates jsonl -> csv / markdown tables
 figures.py         fig1-3, fig5-6
 confusion.py       error analysis + fig4
@@ -168,7 +204,7 @@ proposal/          one-page project proposal (HTML source + PDF)
 ## Status
 
 Implemented: baseline reproduction, full classifier × preprocessing grid, dimension sweep,
-learning curves, (C, γ) sensitivity surface, error analysis.
+learning curves, (C, γ) sensitivity surface, error analysis, small-CNN control group.
 
 Still to do for the final report: explicit 1-vs-all confidence rules (how to arbitrate when
 several one-vs-all classifiers claim a digit), and the write-up itself.
