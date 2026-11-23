@@ -120,7 +120,8 @@ that *learns* its own translation-equivariant features should still be the one t
 
 Architecture: conv(16)-BN-ReLU-pool → conv(32)-BN-ReLU-pool → FC(128)-dropout → FC(10); Adam, 40
 epochs max with early stopping on a 10% stratified slice of the training set, 2 seeds × 2 trials.
-No augmentation — the point is the model class, not a tuned pipeline.
+No augmentation — the point is the model class, not a tuned pipeline. In the learning-curve
+figure above, the CNN appears as the black stars.
 
 | n | Small CNN | RBF SVM | QDA (eigen) | Linear SVM |
 |---|---|---|---|---|
