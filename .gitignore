@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Course data (provided by the course, not redistributed here)
+data/
+digits4000*.zip
+digits4000_txt/
+digits4000.mat
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Local scratch
+*.tmp

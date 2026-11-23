@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CS5487 Course Project Proposal</title>
+<style>
+  @page { size: A4; margin: 16mm 16mm 14mm 16mm; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Times New Roman", "Nimbus Roman", Georgia, serif;
+    font-size: 9.7pt;
+    line-height: 1.33;
+    color: #111;
+  }
+  h1 { font-size: 15pt; margin: 0 0 2px 0; line-height: 1.2; }
+  .meta { font-size: 8.8pt; color: #333; margin-bottom: 8px; border-bottom: 1px solid #bbb; padding-bottom: 5px; }
+  h2 { font-size: 10.2pt; margin: 8px 0 2px 0; }
+  p { margin: 0 0 4px 0; text-align: justify; }
+  ul { margin: 2px 0 4px 0; padding-left: 16px; }
+  li { margin: 0 0 1.5px 0; text-align: justify; }
+  table { border-collapse: collapse; width: 100%; font-size: 8.4pt; margin: 2px 0 4px 0; }
+  th, td { border: 1px solid #999; padding: 2px 4px; text-align: left; vertical-align: top; }
+  th { background: #eee; font-weight: bold; }
+  .q { background: #f6f6f6; border-left: 3px solid #555; padding: 4px 7px; margin: 4px 0 5px 0; }
+  .small { font-size: 8.6pt; color: #333; }
+  .ph { color: #a00; }
+  code { font-family: Consolas, "Courier New", monospace; font-size: 8.8pt; }
+</style>
+</head>
+<body>
+
+<h1>Decomposing the &ldquo;Kernel Gain&rdquo;: What Actually Buys Accuracy on Handwritten Digits</h1>
+<div class="meta">
+  CS5487 Machine Learning &middot; Assignment 3 &ndash; Course Project Proposal &middot;
+  Group: <span class="ph">[member 1, member 2, member 3]</span> &middot; 16 Nov 2026
+</div>
+
+<h2>1. Problem</h2>
+<p>
+The default task &mdash; 10-class handwritten digit classification on the provided 4,000-image MNIST subset
+(784-d pixel vectors) &mdash; comes with a useful reference point: 1-NN on raw pixels achieves 0.9135 / 0.9185
+test accuracy on the two trials (mean 0.9160). Kernel methods are routinely reported to beat this, and the
+improvement is usually attributed to &ldquo;nonlinearity&rdquo;. But three things change at once when a linear
+classifier is replaced by an RBF SVM: the <em>feature space</em> (dimension), the <em>shape of the decision
+boundary</em>, and the <em>effective regularisation</em>. Our project isolates the middle one.
+</p>
+<div class="q"><strong>Research question.</strong> At a fixed feature space, how much does a nonlinear decision
+boundary actually buy over the best linear model, and how does that gain depend on the number of retained
+dimensions? At which dimension does the gain stabilise or vanish?</div>
+<p>
+The answer is practically relevant: it tells a practitioner whether to spend effort on features or on the
+classifier, and it makes the usual &ldquo;kernel methods are better&rdquo; statement quantitative instead of
+anecdotal.
+</p>
+
+<h2>2. What we plan to do</h2>
+<table>
+  <tr>
+    <th style="width:17%">Axis</th><th>Variants (all transforms fitted on training data only)</th>
+  </tr>
+  <tr>
+    <td>Features</td>
+    <td>raw pixels in [0,1]; per-pixel standardisation; PCA with <em>k</em> &isin; {10, 20, 30, 50, 80, 120, 200, 300, 500},
+        each with and without whitening.</td>
+  </tr>
+  <tr>
+    <td>Linear models</td>
+    <td>BDR with shared covariance (LDA, with and without shrinkage on the pooled covariance);
+        multinomial logistic regression; linear SVM.</td>
+  </tr>
+  <tr>
+    <td>Nonlinear models</td>
+    <td>BDR with class-dependent full covariance (QDA, regularised); RBF-kernel SVM.</td>
+  </tr>
+  <tr>
+    <td>Reference</td>
+    <td>1-NN with Euclidean distance (reproduces the published baseline).</td>
+  </tr>
+</table>
+<p>
+The two axes are fully crossed (10 feature spaces &times; 7 classifiers &times; 2 trials), so every classifier is
+seen in every feature space. This deliberately includes the regime where full-covariance BDR is ill-posed
+(<em>p</em> &gt; <em>n</em><sub>class</sub>); those failures are reported as results, not silently dropped, because
+they are exactly what a practitioner needs to know.
+</p>
+
+<h2>3. Data, protocol and evaluation</h2>
+<ul>
+  <li><strong>Data.</strong> The provided <code>digits4000</code> subset, used exactly as given. Each of the two
+      trials has 2,000 training and 2,000 test images, and no writer appears in both, so the split measures
+      generalisation across writers.</li>
+  <li><strong>Model selection.</strong> All hyper-parameters (SVM <em>C</em> and &gamma;, logistic <em>C</em>,
+      shrinkage / <code>reg_param</code>) are chosen by 5-fold stratified cross-validation <em>inside</em> the
+      training set. The test set is touched once per configuration; we will also report CV accuracy next to test
+      accuracy to show the two agree (no test-set tuning).</li>
+  <li><strong>Metrics.</strong> Per-trial accuracy and mean &plusmn; s.d. over the two trials; per-class recall and
+      precision; full confusion matrices; the accuracy-versus-<em>k</em> curve; and the estimated marginal gain of
+      nonlinearity, defined as (best nonlinear) &minus; (best linear) at each <em>k</em>.</li>
+  <li><strong>Tooling.</strong> Python + scikit-learn (third-party code, to be acknowledged in the report).</li>
+</ul>
+
+<h2>4. What counts as a good outcome</h2>
+<ul>
+  <li>Beat the 1-NN baseline (0.9160) by at least 3 percentage points, with trial-to-trial s.d. &le; 0.005 &mdash;
+      i.e. the improvement must be larger than the split-to-split noise.</li>
+  <li>Locate the dimension at which the nonlinear gain stops changing, or show that it does not.</li>
+  <li>Give an evidence-backed account of which preprocessing helps, which hurts, and <em>why</em> &mdash;
+      in particular, a mechanism for the whitening and per-pixel-standardisation effects, not just numbers.</li>
+</ul>
+
+<h2>5. Preliminary evidence that the project is feasible</h2>
+<p class="small">
+A pilot run of the full cross (already completed, same protocol as above) reproduces the baseline exactly
+(0.9135 / 0.9185), and shows the effect is large enough to be measured: linear models saturate at &asymp;0.902 from
+<em>k</em> &ge; 50 onward, while RBF SVM holds &asymp;0.948 from <em>k</em> = 20 to 500, and regularised QDA peaks at
+0.9548 (<em>k</em> = 30) before decaying. PCA-20 retains only 65% of the pixel variance yet already supports 0.947,
+so the discarded tail matters mainly for covariance estimation, not for class separation. Whitening never helps in
+our pilot and hurts badly at high <em>k</em> (1-NN drops from 0.918 to 0.617 at <em>k</em> = 200). These observations
+define the analysis to be completed; the remaining work is breadth
+(standardisation, parameter sensitivity, learning curves) and writing, not feasibility.
+</p>
+
+<h2>6. Division of work</h2>
+<p class="small">
+<span class="ph">[to be filled once the group is fixed]</span> &mdash; planned split: (i) feature pipelines and
+dimension sweep; (ii) classifiers, tuning and cross-validation; (iii) evaluation, error analysis, figures and report.
+</p>
+
+</body>
+</html>

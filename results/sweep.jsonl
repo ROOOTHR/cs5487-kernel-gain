@@ -1,0 +1,108 @@
+{"model": "svm_rbf", "preproc": "pca10", "trial": 0, "n_features": 10, "cv_acc": 0.896, "test_acc": 0.908, "best_params": {"C": 1.0, "gamma": 0.11578923249228887}, "fit_seconds": 8.79}
+{"model": "svm_rbf", "preproc": "pca10", "trial": 1, "n_features": 10, "cv_acc": 0.8985, "test_acc": 0.892, "best_params": {"C": 10.0, "gamma": 0.037808165142460826}, "fit_seconds": 9.09}
+{"model": "svm_linear", "preproc": "pca10", "trial": 0, "n_features": 10, "cv_acc": 0.8275, "test_acc": 0.8385, "best_params": {"C": 0.1}, "fit_seconds": 69.16}
+{"model": "svm_linear", "preproc": "pca10", "trial": 1, "n_features": 10, "cv_acc": 0.838, "test_acc": 0.8155, "best_params": {"C": 0.1}, "fit_seconds": 65.36}
+{"model": "logreg", "preproc": "pca10", "trial": 0, "n_features": 10, "cv_acc": 0.804, "test_acc": 0.801, "best_params": {"C": 10.0}, "fit_seconds": 2.03}
+{"model": "logreg", "preproc": "pca10", "trial": 1, "n_features": 10, "cv_acc": 0.793, "test_acc": 0.777, "best_params": {"C": 1000.0}, "fit_seconds": 2.52}
+{"model": "bdr_shared", "preproc": "pca10", "trial": 0, "n_features": 10, "cv_acc": null, "test_acc": 0.782, "best_params": {}, "fit_seconds": 0.03}
+{"model": "bdr_shared", "preproc": "pca10", "trial": 1, "n_features": 10, "cv_acc": null, "test_acc": 0.7335, "best_params": {}, "fit_seconds": 0.03}
+{"model": "bdr_full_eig", "preproc": "pca10", "trial": 0, "n_features": 10, "cv_acc": 0.8755, "test_acc": 0.884, "best_params": {"reg_param": 0.001, "shrinkage": null}, "fit_seconds": 1.26}
+{"model": "bdr_full_eig", "preproc": "pca10", "trial": 1, "n_features": 10, "cv_acc": 0.8795, "test_acc": 0.876, "best_params": {"reg_param": 0.001, "shrinkage": null}, "fit_seconds": 1.22}
+{"model": "knn1", "preproc": "pca10", "trial": 0, "n_features": 10, "cv_acc": null, "test_acc": 0.8575, "best_params": {}, "fit_seconds": 0.03}
+{"model": "knn1", "preproc": "pca10", "trial": 1, "n_features": 10, "cv_acc": null, "test_acc": 0.838, "best_params": {}, "fit_seconds": 0.02}
+{"model": "svm_rbf", "preproc": "pca20", "trial": 0, "n_features": 20, "cv_acc": 0.9455, "test_acc": 0.9485, "best_params": {"C": 10.0, "gamma": 0.02923081147465237}, "fit_seconds": 9.68}
+{"model": "svm_rbf", "preproc": "pca20", "trial": 1, "n_features": 20, "cv_acc": 0.947, "test_acc": 0.946, "best_params": {"C": 10.0, "gamma": 0.08624650895570327}, "fit_seconds": 8.82}
+{"model": "svm_linear", "preproc": "pca20", "trial": 0, "n_features": 20, "cv_acc": 0.887, "test_acc": 0.8915, "best_params": {"C": 0.1}, "fit_seconds": 33.59}
+{"model": "svm_linear", "preproc": "pca20", "trial": 1, "n_features": 20, "cv_acc": 0.8905, "test_acc": 0.8685, "best_params": {"C": 0.01}, "fit_seconds": 34.1}
+{"model": "logreg", "preproc": "pca20", "trial": 0, "n_features": 20, "cv_acc": 0.867, "test_acc": 0.8695, "best_params": {"C": 1.0}, "fit_seconds": 2.74}
+{"model": "logreg", "preproc": "pca20", "trial": 1, "n_features": 20, "cv_acc": 0.868, "test_acc": 0.857, "best_params": {"C": 10.0}, "fit_seconds": 3.11}
+{"model": "bdr_shared", "preproc": "pca20", "trial": 0, "n_features": 20, "cv_acc": null, "test_acc": 0.8375, "best_params": {}, "fit_seconds": 0.05}
+{"model": "bdr_shared", "preproc": "pca20", "trial": 1, "n_features": 20, "cv_acc": null, "test_acc": 0.834, "best_params": {}, "fit_seconds": 0.05}
+{"model": "bdr_full_eig", "preproc": "pca20", "trial": 0, "n_features": 20, "cv_acc": 0.9415, "test_acc": 0.9405, "best_params": {"reg_param": 0.001, "shrinkage": 0.1}, "fit_seconds": 1.35}
+{"model": "bdr_full_eig", "preproc": "pca20", "trial": 1, "n_features": 20, "cv_acc": 0.9425, "test_acc": 0.9445, "best_params": {"reg_param": 0.001, "shrinkage": 0.1}, "fit_seconds": 1.69}
+{"model": "knn1", "preproc": "pca20", "trial": 0, "n_features": 20, "cv_acc": null, "test_acc": 0.921, "best_params": {}, "fit_seconds": 0.02}
+{"model": "knn1", "preproc": "pca20", "trial": 1, "n_features": 20, "cv_acc": null, "test_acc": 0.917, "best_params": {}, "fit_seconds": 0.04}
+{"model": "svm_rbf", "preproc": "pca30", "trial": 0, "n_features": 30, "cv_acc": 0.9505, "test_acc": 0.9495, "best_params": {"C": 10.0, "gamma": 0.0257054505548074}, "fit_seconds": 11.77}
+{"model": "svm_rbf", "preproc": "pca30", "trial": 1, "n_features": 30, "cv_acc": 0.95, "test_acc": 0.945, "best_params": {"C": 10.0, "gamma": 0.02538794080922524}, "fit_seconds": 11.96}
+{"model": "svm_linear", "preproc": "pca30", "trial": 0, "n_features": 30, "cv_acc": 0.8985, "test_acc": 0.8985, "best_params": {"C": 0.1}, "fit_seconds": 11.55}
+{"model": "svm_linear", "preproc": "pca30", "trial": 1, "n_features": 30, "cv_acc": 0.9075, "test_acc": 0.8945, "best_params": {"C": 0.1}, "fit_seconds": 16.66}
+{"model": "logreg", "preproc": "pca30", "trial": 0, "n_features": 30, "cv_acc": 0.882, "test_acc": 0.8845, "best_params": {"C": 0.1}, "fit_seconds": 3.65}
+{"model": "logreg", "preproc": "pca30", "trial": 1, "n_features": 30, "cv_acc": 0.876, "test_acc": 0.874, "best_params": {"C": 0.1}, "fit_seconds": 3.73}
+{"model": "bdr_shared", "preproc": "pca30", "trial": 0, "n_features": 30, "cv_acc": null, "test_acc": 0.852, "best_params": {}, "fit_seconds": 0.05}
+{"model": "bdr_shared", "preproc": "pca30", "trial": 1, "n_features": 30, "cv_acc": null, "test_acc": 0.85, "best_params": {}, "fit_seconds": 0.04}
+{"model": "bdr_full_eig", "preproc": "pca30", "trial": 0, "n_features": 30, "cv_acc": 0.9515, "test_acc": 0.9495, "best_params": {"reg_param": 0.001, "shrinkage": 0.1}, "fit_seconds": 2.02}
+{"model": "bdr_full_eig", "preproc": "pca30", "trial": 1, "n_features": 30, "cv_acc": 0.9535, "test_acc": 0.96, "best_params": {"reg_param": 0.001, "shrinkage": 0.1}, "fit_seconds": 1.56}
+{"model": "knn1", "preproc": "pca30", "trial": 0, "n_features": 30, "cv_acc": null, "test_acc": 0.9275, "best_params": {}, "fit_seconds": 0.04}
+{"model": "knn1", "preproc": "pca30", "trial": 1, "n_features": 30, "cv_acc": null, "test_acc": 0.927, "best_params": {}, "fit_seconds": 0.04}
+{"model": "svm_rbf", "preproc": "pca50", "trial": 0, "n_features": 50, "cv_acc": 0.9545, "test_acc": 0.949, "best_params": {"C": 10.0, "gamma": 0.022768538266991434}, "fit_seconds": 15.78}
+{"model": "svm_rbf", "preproc": "pca50", "trial": 1, "n_features": 50, "cv_acc": 0.9495, "test_acc": 0.948, "best_params": {"C": 10.0, "gamma": 0.0225538729429535}, "fit_seconds": 15.19}
+{"model": "svm_linear", "preproc": "pca50", "trial": 0, "n_features": 50, "cv_acc": 0.9095, "test_acc": 0.9115, "best_params": {"C": 0.1}, "fit_seconds": 4.63}
+{"model": "svm_linear", "preproc": "pca50", "trial": 1, "n_features": 50, "cv_acc": 0.912, "test_acc": 0.8925, "best_params": {"C": 0.01}, "fit_seconds": 4.21}
+{"model": "logreg", "preproc": "pca50", "trial": 0, "n_features": 50, "cv_acc": 0.8925, "test_acc": 0.894, "best_params": {"C": 0.1}, "fit_seconds": 6.57}
+{"model": "logreg", "preproc": "pca50", "trial": 1, "n_features": 50, "cv_acc": 0.8945, "test_acc": 0.8815, "best_params": {"C": 0.1}, "fit_seconds": 6.65}
+{"model": "bdr_shared", "preproc": "pca50", "trial": 0, "n_features": 50, "cv_acc": null, "test_acc": 0.8705, "best_params": {}, "fit_seconds": 0.11}
+{"model": "bdr_shared", "preproc": "pca50", "trial": 1, "n_features": 50, "cv_acc": null, "test_acc": 0.856, "best_params": {}, "fit_seconds": 0.1}
+{"model": "bdr_full_eig", "preproc": "pca50", "trial": 0, "n_features": 50, "cv_acc": 0.9515, "test_acc": 0.946, "best_params": {"reg_param": 0.001, "shrinkage": 0.1}, "fit_seconds": 3.25}
+{"model": "bdr_full_eig", "preproc": "pca50", "trial": 1, "n_features": 50, "cv_acc": 0.9565, "test_acc": 0.959, "best_params": {"reg_param": 0.001, "shrinkage": 0.1}, "fit_seconds": 2.93}
+{"model": "knn1", "preproc": "pca50", "trial": 0, "n_features": 50, "cv_acc": null, "test_acc": 0.9295, "best_params": {}, "fit_seconds": 0.08}
+{"model": "knn1", "preproc": "pca50", "trial": 1, "n_features": 50, "cv_acc": null, "test_acc": 0.9245, "best_params": {}, "fit_seconds": 0.08}
+{"model": "svm_rbf", "preproc": "pca80", "trial": 0, "n_features": 80, "cv_acc": 0.9525, "test_acc": 0.952, "best_params": {"C": 10.0, "gamma": 0.021094038393798864}, "fit_seconds": 15.09}
+{"model": "svm_rbf", "preproc": "pca80", "trial": 1, "n_features": 80, "cv_acc": 0.9495, "test_acc": 0.949, "best_params": {"C": 10.0, "gamma": 0.020966685082419993}, "fit_seconds": 15.92}
+{"model": "svm_linear", "preproc": "pca80", "trial": 0, "n_features": 80, "cv_acc": 0.908, "test_acc": 0.9065, "best_params": {"C": 0.01}, "fit_seconds": 4.59}
+{"model": "svm_linear", "preproc": "pca80", "trial": 1, "n_features": 80, "cv_acc": 0.915, "test_acc": 0.893, "best_params": {"C": 0.01}, "fit_seconds": 4.2}
+{"model": "logreg", "preproc": "pca80", "trial": 0, "n_features": 80, "cv_acc": 0.89, "test_acc": 0.891, "best_params": {"C": 0.1}, "fit_seconds": 5.01}
+{"model": "logreg", "preproc": "pca80", "trial": 1, "n_features": 80, "cv_acc": 0.894, "test_acc": 0.885, "best_params": {"C": 0.1}, "fit_seconds": 4.28}
+{"model": "bdr_shared", "preproc": "pca80", "trial": 0, "n_features": 80, "cv_acc": null, "test_acc": 0.8715, "best_params": {}, "fit_seconds": 0.07}
+{"model": "bdr_shared", "preproc": "pca80", "trial": 1, "n_features": 80, "cv_acc": null, "test_acc": 0.8545, "best_params": {}, "fit_seconds": 0.08}
+{"model": "bdr_full_eig", "preproc": "pca80", "trial": 0, "n_features": 80, "cv_acc": 0.9525, "test_acc": 0.9465, "best_params": {"reg_param": 0.001, "shrinkage": 0.1}, "fit_seconds": 3.24}
+{"model": "bdr_full_eig", "preproc": "pca80", "trial": 1, "n_features": 80, "cv_acc": 0.9575, "test_acc": 0.956, "best_params": {"reg_param": 0.001, "shrinkage": 0.1}, "fit_seconds": 3.3}
+{"model": "knn1", "preproc": "pca80", "trial": 0, "n_features": 80, "cv_acc": null, "test_acc": 0.9245, "best_params": {}, "fit_seconds": 0.07}
+{"model": "knn1", "preproc": "pca80", "trial": 1, "n_features": 80, "cv_acc": null, "test_acc": 0.924, "best_params": {}, "fit_seconds": 0.09}
+{"model": "svm_rbf", "preproc": "pca120", "trial": 0, "n_features": 120, "cv_acc": 0.951, "test_acc": 0.9505, "best_params": {"C": 10.0, "gamma": 0.02018044358442404}, "fit_seconds": 20.43}
+{"model": "svm_rbf", "preproc": "pca120", "trial": 1, "n_features": 120, "cv_acc": 0.949, "test_acc": 0.945, "best_params": {"C": 10.0, "gamma": 0.02010130341801388}, "fit_seconds": 18.7}
+{"model": "svm_linear", "preproc": "pca120", "trial": 0, "n_features": 120, "cv_acc": 0.907, "test_acc": 0.909, "best_params": {"C": 0.01}, "fit_seconds": 5.01}
+{"model": "svm_linear", "preproc": "pca120", "trial": 1, "n_features": 120, "cv_acc": 0.913, "test_acc": 0.896, "best_params": {"C": 0.01}, "fit_seconds": 4.54}
+{"model": "logreg", "preproc": "pca120", "trial": 0, "n_features": 120, "cv_acc": 0.8925, "test_acc": 0.894, "best_params": {"C": 0.1}, "fit_seconds": 4.34}
+{"model": "logreg", "preproc": "pca120", "trial": 1, "n_features": 120, "cv_acc": 0.892, "test_acc": 0.8845, "best_params": {"C": 0.1}, "fit_seconds": 4.24}
+{"model": "bdr_shared", "preproc": "pca120", "trial": 0, "n_features": 120, "cv_acc": null, "test_acc": 0.864, "best_params": {}, "fit_seconds": 0.07}
+{"model": "bdr_shared", "preproc": "pca120", "trial": 1, "n_features": 120, "cv_acc": null, "test_acc": 0.8575, "best_params": {}, "fit_seconds": 0.07}
+{"model": "bdr_full_eig", "preproc": "pca120", "trial": 0, "n_features": 120, "cv_acc": 0.9505, "test_acc": 0.943, "best_params": {"reg_param": 0.001, "shrinkage": 0.1}, "fit_seconds": 3.86}
+{"model": "bdr_full_eig", "preproc": "pca120", "trial": 1, "n_features": 120, "cv_acc": 0.9535, "test_acc": 0.95, "best_params": {"reg_param": 0.001, "shrinkage": 0.1}, "fit_seconds": 4.15}
+{"model": "knn1", "preproc": "pca120", "trial": 0, "n_features": 120, "cv_acc": null, "test_acc": 0.9205, "best_params": {}, "fit_seconds": 0.08}
+{"model": "knn1", "preproc": "pca120", "trial": 1, "n_features": 120, "cv_acc": null, "test_acc": 0.9205, "best_params": {}, "fit_seconds": 0.13}
+{"model": "svm_rbf", "preproc": "pca200", "trial": 0, "n_features": 200, "cv_acc": 0.951, "test_acc": 0.9505, "best_params": {"C": 10.0, "gamma": 0.019458872392754022}, "fit_seconds": 25.52}
+{"model": "svm_rbf", "preproc": "pca200", "trial": 1, "n_features": 200, "cv_acc": 0.9475, "test_acc": 0.9455, "best_params": {"C": 10.0, "gamma": 0.019406528986228102}, "fit_seconds": 24.56}
+{"model": "svm_linear", "preproc": "pca200", "trial": 0, "n_features": 200, "cv_acc": 0.9085, "test_acc": 0.907, "best_params": {"C": 0.01}, "fit_seconds": 6.87}
+{"model": "svm_linear", "preproc": "pca200", "trial": 1, "n_features": 200, "cv_acc": 0.912, "test_acc": 0.8975, "best_params": {"C": 0.01}, "fit_seconds": 7.26}
+{"model": "logreg", "preproc": "pca200", "trial": 0, "n_features": 200, "cv_acc": 0.8925, "test_acc": 0.8895, "best_params": {"C": 0.1}, "fit_seconds": 6.34}
+{"model": "logreg", "preproc": "pca200", "trial": 1, "n_features": 200, "cv_acc": 0.89, "test_acc": 0.885, "best_params": {"C": 0.1}, "fit_seconds": 6.07}
+{"model": "bdr_shared", "preproc": "pca200", "trial": 0, "n_features": 200, "cv_acc": null, "test_acc": 0.855, "best_params": {}, "fit_seconds": 0.15}
+{"model": "bdr_shared", "preproc": "pca200", "trial": 1, "n_features": 200, "cv_acc": null, "test_acc": 0.8465, "best_params": {}, "fit_seconds": 0.14}
+{"model": "bdr_full_eig", "preproc": "pca200", "trial": 0, "n_features": 200, "cv_acc": 0.941, "test_acc": 0.9355, "best_params": {"reg_param": 0.001, "shrinkage": 0.1}, "fit_seconds": 6.74}
+{"model": "bdr_full_eig", "preproc": "pca200", "trial": 1, "n_features": 200, "cv_acc": 0.9505, "test_acc": 0.945, "best_params": {"reg_param": 0.001, "shrinkage": 0.1}, "fit_seconds": 7.61}
+{"model": "knn1", "preproc": "pca200", "trial": 0, "n_features": 200, "cv_acc": null, "test_acc": 0.9155, "best_params": {}, "fit_seconds": 0.11}
+{"model": "knn1", "preproc": "pca200", "trial": 1, "n_features": 200, "cv_acc": null, "test_acc": 0.9195, "best_params": {}, "fit_seconds": 0.28}
+{"model": "svm_rbf", "preproc": "pca300", "trial": 0, "n_features": 300, "cv_acc": 0.9505, "test_acc": 0.9485, "best_params": {"C": 10.0, "gamma": 0.019100354923674418}, "fit_seconds": 34.62}
+{"model": "svm_rbf", "preproc": "pca300", "trial": 1, "n_features": 300, "cv_acc": 0.946, "test_acc": 0.9435, "best_params": {"C": 10.0, "gamma": 0.0190580441287948}, "fit_seconds": 33.78}
+{"model": "svm_linear", "preproc": "pca300", "trial": 0, "n_features": 300, "cv_acc": 0.9105, "test_acc": 0.9065, "best_params": {"C": 0.1}, "fit_seconds": 10.07}
+{"model": "svm_linear", "preproc": "pca300", "trial": 1, "n_features": 300, "cv_acc": 0.9145, "test_acc": 0.897, "best_params": {"C": 0.01}, "fit_seconds": 10.89}
+{"model": "logreg", "preproc": "pca300", "trial": 0, "n_features": 300, "cv_acc": 0.8915, "test_acc": 0.887, "best_params": {"C": 0.1}, "fit_seconds": 9.58}
+{"model": "logreg", "preproc": "pca300", "trial": 1, "n_features": 300, "cv_acc": 0.8925, "test_acc": 0.8865, "best_params": {"C": 0.1}, "fit_seconds": 7.8}
+{"model": "bdr_shared", "preproc": "pca300", "trial": 0, "n_features": 300, "cv_acc": null, "test_acc": 0.838, "best_params": {}, "fit_seconds": 0.22}
+{"model": "bdr_shared", "preproc": "pca300", "trial": 1, "n_features": 300, "cv_acc": null, "test_acc": 0.8405, "best_params": {}, "fit_seconds": 0.17}
+{"model": "bdr_full_eig", "preproc": "pca300", "trial": 0, "n_features": 300, "cv_acc": 0.934, "test_acc": 0.9335, "best_params": {"reg_param": 0.001, "shrinkage": 0.1}, "fit_seconds": 11.25}
+{"model": "bdr_full_eig", "preproc": "pca300", "trial": 1, "n_features": 300, "cv_acc": 0.95, "test_acc": 0.942, "best_params": {"reg_param": 0.001, "shrinkage": 0.1}, "fit_seconds": 10.52}
+{"model": "knn1", "preproc": "pca300", "trial": 0, "n_features": 300, "cv_acc": null, "test_acc": 0.915, "best_params": {}, "fit_seconds": 0.2}
+{"model": "knn1", "preproc": "pca300", "trial": 1, "n_features": 300, "cv_acc": null, "test_acc": 0.9195, "best_params": {}, "fit_seconds": 0.21}
+{"model": "svm_rbf", "preproc": "pca500", "trial": 0, "n_features": 500, "cv_acc": 0.9505, "test_acc": 0.948, "best_params": {"C": 10.0, "gamma": 0.018900173233398137}, "fit_seconds": 53.32}
+{"model": "svm_rbf", "preproc": "pca500", "trial": 1, "n_features": 500, "cv_acc": 0.946, "test_acc": 0.9425, "best_params": {"C": 10.0, "gamma": 0.018868815998305123}, "fit_seconds": 50.58}
+{"model": "svm_linear", "preproc": "pca500", "trial": 0, "n_features": 500, "cv_acc": 0.9115, "test_acc": 0.907, "best_params": {"C": 0.1}, "fit_seconds": 17.32}
+{"model": "svm_linear", "preproc": "pca500", "trial": 1, "n_features": 500, "cv_acc": 0.914, "test_acc": 0.897, "best_params": {"C": 0.01}, "fit_seconds": 16.13}
+{"model": "logreg", "preproc": "pca500", "trial": 0, "n_features": 500, "cv_acc": 0.89, "test_acc": 0.8885, "best_params": {"C": 0.1}, "fit_seconds": 13.92}
+{"model": "logreg", "preproc": "pca500", "trial": 1, "n_features": 500, "cv_acc": 0.892, "test_acc": 0.8845, "best_params": {"C": 0.1}, "fit_seconds": 13.61}
+{"model": "bdr_shared", "preproc": "pca500", "trial": 0, "n_features": 500, "cv_acc": null, "test_acc": 0.8135, "best_params": {}, "fit_seconds": 0.45}
+{"model": "bdr_shared", "preproc": "pca500", "trial": 1, "n_features": 500, "cv_acc": null, "test_acc": 0.812, "best_params": {}, "fit_seconds": 0.44}
+{"model": "bdr_full_eig", "preproc": "pca500", "trial": 0, "n_features": 500, "cv_acc": 0.9325, "test_acc": 0.931, "best_params": {"reg_param": 0.001, "shrinkage": 0.1}, "fit_seconds": 21.77}
+{"model": "bdr_full_eig", "preproc": "pca500", "trial": 1, "n_features": 500, "cv_acc": 0.9435, "test_acc": 0.9395, "best_params": {"reg_param": 0.001, "shrinkage": 0.1}, "fit_seconds": 20.92}
+{"model": "knn1", "preproc": "pca500", "trial": 0, "n_features": 500, "cv_acc": null, "test_acc": 0.9135, "best_params": {}, "fit_seconds": 0.42}
+{"model": "knn1", "preproc": "pca500", "trial": 1, "n_features": 500, "cv_acc": null, "test_acc": 0.9185, "best_params": {}, "fit_seconds": 0.37}
