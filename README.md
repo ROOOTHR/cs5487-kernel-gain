@@ -60,6 +60,58 @@ Error analysis for the best configuration (QDA on 50 PCA dims): hardest digits a
 0.917), 5 (0.925) and 9 (0.935); the most confused pairs are **3–5 (17 errors), 7–9 (13),
 4–9 (11), 2–7 (11)**.
 
+## Does the kernel gain depend on how much data you have?
+
+A plausible objection to the result above: maybe nonlinearity only wins because 2,000 images is
+"a lot" for a linear model to be out of its depth. To test it, each classifier is retrained on a
+class-balanced subsample of the training set (n = 100 … 2,000), always on the same 50 PCA
+dimensions, always with hyper-parameters re-tuned by 5-fold CV *inside* that subsample.
+
+| n | RBF SVM | QDA (eigen) | Linear SVM | Logistic | 1-NN |
+|---|---|---|---|---|---|
+| 100 | **0.7708** | 0.7535 | 0.7568 | 0.7392 | 0.7138 |
+| 200 | 0.8535 | 0.8575 | 0.8140 | 0.8110 | 0.7912 |
+| 400 | 0.9028 | 0.9108 | 0.8610 | 0.8518 | 0.8588 |
+| 500 | 0.9162 | 0.9290 | 0.8660 | 0.8495 | 0.8692 |
+| 700 | 0.9245 | 0.9360 | 0.8755 | 0.8590 | 0.8898 |
+| 1,000 | 0.9342 | 0.9490 | 0.8905 | 0.8728 | 0.8988 |
+| 1,500 | 0.9438 | 0.9525 | 0.8988 | 0.8832 | 0.9195 |
+| 2,000 | 0.9485 | **0.9525** | 0.9020 | 0.8878 | 0.9270 |
+
+![Learning curves](results/figs/fig5_learning_curve.png)
+
+1. **The kernel gain is not a small-sample artefact — it grows with data.** It starts at
+   **+1.4 pp** for n = 100, widens to **+5.0 pp** at n = 500, then settles at **+4.4 to +4.7 pp**.
+   If nonlinearity were buying variance reduction on scarce data, the curve would go the other way.
+2. **At n = 100 the ranking flips.** RBF SVM is the best model at the smallest sample size, while
+   QDA is worst-but-one; from n = 200 the ordering reverses and QDA never loses again. Estimating
+   785 covariance parameters per class needs data that 100 images do not provide.
+3. **The chosen kernel width is not constant with n.** Expressed as a multiple of the
+   median-distance heuristic 1/(k·σ̄²), the optimum is **0.1–0.3× at n = 100**, **0.3–1× at
+   n = 200**, and **exactly 1× for every n ≥ 400** — i.e. less data prefers a smoother kernel.
+   C is pinned at 10 throughout.
+4. **1-NN is the most data-hungry model here** (0.714 → 0.927) and overtakes the linear SVM at
+   n ≥ 700, from which point it keeps climbing while the linear models flatten.
+
+## Is the kernel sitting on a knife edge?
+
+A classifier that only works for one magic γ would make the comparison above uninteresting. The
+surface below is **5-fold CV accuracy inside the training set** — deliberately not test accuracy,
+so that the whole figure can be inspected without any risk of tuning on test data.
+
+![Gamma sensitivity](results/figs/fig6_gamma_sensitivity.png)
+
+1. **γ is the sensitive knob; C is nearly irrelevant.** For every space, the four C columns are
+   numerically identical once C ≥ 10; only C = 1 costs anything (and only slightly).
+2. **The useful band is about one decade wide** (0.3–3 × the heuristic); 8/24 cells of the
+   (γ, C) grid are within 1 pp of the best on PCA-20 and PCA-50, 4/24 on PCA-200 and raw pixels.
+3. **Too large a γ is catastrophic, not merely suboptimal**: 30× gives 0.43 on PCA-20 but 0.25–0.31
+   on the higher-dimensional spaces — a 60-plus point collapse from an over-local kernel.
+4. **The median heuristic lands on the optimum on its own** (γ = 1×) in all four spaces. That is
+   why the same γ grid scale is defensible across dimensions, and it is a useful practical takeaway.
+5. **The best CV accuracy barely depends on dimension** (PCA-50 0.952, PCA-200 0.949, raw 784 0.948).
+   Independent evidence for the main claim, obtained without touching the test set.
+
 ## Dataset and protocol
 
 - Provided subset of MNIST: 4,000 images, 10 classes, 400 each, 784-d pixel vectors.
@@ -80,8 +132,10 @@ pip install -r requirements.txt
 export OMP_NUM_THREADS=4 OPENBLAS_NUM_THREADS=4   # see note below
 
 python check_baseline.py        # reproduces 0.9135 / 0.9185 - run this first
-python run_grid.py             # classifier x preprocessing grid  (~13 min)
-python run_sweep.py            # accuracy vs dimension            (~16 min)
+python run_grid.py             # classifier x preprocessing grid   (~13 min)
+python run_sweep.py            # accuracy vs dimension             (~16 min)
+python run_learning_curve.py   # accuracy vs training-set size     (~2 min)
+python run_gamma_sensitivity.py  # (C, gamma) surface, training CV  (~18 min)
 python analyze.py              # markdown tables  -> results/
 python figures.py              # figures          -> results/figs/
 python confusion.py bdr_full pca50   # per-class recall + confusion matrix
@@ -101,8 +155,10 @@ common.py          data loading (the txt files are transposed w.r.t. the MATLAB 
 exp_lib.py         preprocessing variants, classifier grids, one-cell runner
 run_grid.py        stage 1: classifier x preprocessing, 2 trials
 run_sweep.py       stage 2: accuracy vs retained dimension
+run_learning_curve.py     stage 3: accuracy vs training-set size
+run_gamma_sensitivity.py  stage 4: (C, gamma) surface from training-set CV
 analyze.py         aggregates jsonl -> csv / markdown tables
-figures.py         fig1-3
+figures.py         fig1-3, fig5-6
 confusion.py       error analysis + fig4
 check_baseline.py  baseline reproduction (sanity check on the data parsing)
 results/           raw jsonl records, tables, figures, SUMMARY.md
@@ -112,9 +168,10 @@ proposal/          one-page project proposal (HTML source + PDF)
 ## Status
 
 Implemented: baseline reproduction, full classifier × preprocessing grid, dimension sweep,
-error analysis. Still to do for the final report: learning curves (training-set size), γ
-sensitivity, explicit 1-vs-all confidence rules, and a small CNN as a "classical methods are
-enough?" reference point.
+learning curves, (C, γ) sensitivity surface, error analysis.
+
+Still to do for the final report: explicit 1-vs-all confidence rules (how to arbitrate when
+several one-vs-all classifiers claim a digit), and the write-up itself.
 
 ---
 

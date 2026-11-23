@@ -1,0 +1,8 @@
+pca20    trial1 k=20   best CV=0.9455 C=10 gamma=1.00*g0 (search 24 x 5 folds)
+pca20    trial2 k=20   best CV=0.9470 C=10 gamma=3.00*g0 (search 24 x 5 folds)
+pca50    trial1 k=50   best CV=0.9545 C=10 gamma=1.00*g0 (search 24 x 5 folds)
+pca50    trial2 k=50   best CV=0.9495 C=10 gamma=1.00*g0 (search 24 x 5 folds)
+pca200   trial1 k=200  best CV=0.9510 C=10 gamma=1.00*g0 (search 24 x 5 folds)
+pca200   trial2 k=200  best CV=0.9475 C=10 gamma=1.00*g0 (search 24 x 5 folds)
+raw      trial1 k=784  best CV=0.9505 C=10 gamma=1.00*g0 (search 24 x 5 folds)
+raw      trial2 k=784  best CV=0.9460 C=10 gamma=1.00*g0 (search 24 x 5 folds)

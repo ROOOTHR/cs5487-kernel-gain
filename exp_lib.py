@@ -178,6 +178,7 @@ def run_config(
             "preproc": preproc,
             "trial": trial,
             "n_features": int(k),
+            "g0": round(1.0 / (k * var), 10),
             "cv_acc": None,
             "test_acc": None,
             "best_params": {},
@@ -193,6 +194,7 @@ def run_config(
         "preproc": preproc,
         "trial": trial,
         "n_features": int(k),
+        "g0": round(1.0 / (k * var), 10),  # centre of the gamma grid; lets gamma be read as a multiple
         "cv_acc": None if np.isnan(cv_acc) else round(cv_acc, 4),
         "test_acc": round(float(np.mean(y_pred == yte)), 4),
         "best_params": best_params,

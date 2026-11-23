@@ -108,6 +108,53 @@ def main() -> None:
                    if "BDR full-cov + reg (eigen)" in piv.columns else float("nan"))
             print(f"{k:>4}  {rbf * 100:+11.1f}  {qda * 100:+11.1f}")
 
+    # ---- learning curves
+    lc_path = RESULTS / "learning_curve.jsonl"
+    if lc_path.exists():
+        l = load(lc_path)
+        l = l[l["test_acc"].notna()]
+        agg = summarise(l, ["model", "n_train"])
+        print("\n== learning curve: mean test accuracy vs training-set size (pca50) ==")
+        piv = agg.pivot(index="n_train", columns="model", values="mean")
+        cols = [c for c in ["svm_rbf", "bdr_full_eig", "svm_linear", "logreg", "knn1"] if c in piv.columns]
+        piv = piv[cols]
+        disp = piv.copy()
+        disp.columns = [MODEL_LABEL.get(c, c) for c in cols]
+        print(disp.to_string(float_format=lambda v: f"{v:.4f}"))
+        disp.to_csv(RESULTS / "table_learning_curve.csv", float_format="%.4f")
+
+        lin = [c for c in ["svm_linear", "logreg", "bdr_shared"] if c in piv.columns]
+        gain = (piv["svm_rbf"] - piv[lin].max(axis=1)) * 100
+        print("\n== kernel gain vs sample size (pp) ==")
+        for n, g in gain.items():
+            print(f"n={n:<5d} gain={g:+.2f}")
+
+        print("\n== hyper-parameters re-tuned at each n (RBF SVM); gamma as a multiple of 1/(k*var) ==")
+        sub = l[l["model"] == "svm_rbf"].sort_values(["n_train", "trial"])
+        for n, grp in sub.groupby("n_train"):
+            cs = sorted({p.get("C") for p in grp["best_params"]})
+            gm = sorted({round(p.get("gamma") / r["g0"], 2)
+                         for _, r in grp.iterrows() for p in [r["best_params"]] if r.get("g0")})
+            print(f"n={n:<5d} C={cs}  gamma={gm} x g0")
+
+    # ---- gamma / C sensitivity (training-set CV only)
+    gm_path = RESULTS / "gamma_sensitivity.jsonl"
+    if gm_path.exists():
+        g = load(gm_path)
+        print("\n== RBF SVM sensitivity: best training-set CV accuracy per feature space ==")
+        print("space      best CV   argmax(C, gamma/g0)   cells within 1pp   gamma range at best C")
+        for p, sub in g.groupby("preproc"):
+            agg2 = sub.groupby(["gamma_mult", "C"])["cv_acc"].mean().reset_index()
+            best = agg2.loc[agg2["cv_acc"].idxmax()]
+            near = int((agg2["cv_acc"] >= best["cv_acc"] - 0.01).sum())
+            tot = len(agg2)
+            row = sub[sub["C"] == best["C"]].groupby("gamma_mult")["cv_acc"].mean()
+            lo = row[row >= best["cv_acc"] - 0.01].index.min()
+            hi = row[row >= best["cv_acc"] - 0.01].index.max()
+            print(f"{p:9s}  {best['cv_acc']:.4f}   C={best['C']:<6g} gamma={best['gamma_mult']:<5g}"
+                  f"      {near:>2d}/{tot}                 {lo:g} - {hi:g} x g0")
+        g.to_csv(RESULTS / "table_gamma_sensitivity.csv", index=False)
+
 
 if __name__ == "__main__":
     main()

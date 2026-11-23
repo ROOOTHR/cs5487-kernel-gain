@@ -1,0 +1,446 @@
+[1/80] svm_rbf       n=100   trial1 test=0.7770 cv=0.78 (0.7s) {'C': 10.0, 'gamma': 0.0061381390961901365}
+[2/80] svm_rbf       n=100   trial2 test=0.7645 cv=0.79 (0.7s) {'C': 100.0, 'gamma': 0.002130889440243241}
+[3/80] svm_linear    n=100   trial1 test=0.7565 cv=0.77 (0.3s) {'C': 0.1}
+[4/80] svm_linear    n=100   trial2 test=0.7570 cv=0.76 (0.3s) {'C': 0.1}
+[5/80] logreg        n=100   trial1 test=0.7430 cv=0.75 (0.4s) {'C': 10.0}
+[6/80] logreg        n=100   trial2 test=0.7355 cv=0.75 (0.4s) {'C': 0.1}
+D:\Download\机器学习\.venv\Lib\site-packages\sklearn\model_selection\_validation.py:493: FitFailedWarning: 
+20 fits failed out of a total of 40.
+The score on these train-test partitions for these parameters will be set to nan.
+If these failures are not expected, you can try to debug them by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+20 fits failed with the following error:
+Traceback (most recent call last):
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 855, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\pipeline.py", line 645, in fit
+    self._final_estimator.fit(Xt, y, **last_step_params["fit"])
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\discriminant_analysis.py", line 1142, in fit
+    raise linalg.LinAlgError(
+    ...<3 lines>...
+    )
+numpy.linalg.LinAlgError: The covariance matrix of class 0 is not full rank. Increase the value of `shrinkage` to reduce the collinearity.
+
+  warnings.warn(some_fits_failed_message, FitFailedWarning)
+D:\Download\机器学习\.venv\Lib\site-packages\sklearn\model_selection\_search.py:1237: UserWarning: One or more of the test scores are non-finite: [ nan 0.72  nan 0.72  nan 0.72  nan 0.72]
+  warnings.warn(
+[7/80] bdr_full_eig  n=100   trial1 test=0.7500 cv=0.72 (0.4s) {'reg_param': 0.001, 'shrinkage': 0.1}
+D:\Download\机器学习\.venv\Lib\site-packages\sklearn\model_selection\_validation.py:493: FitFailedWarning: 
+20 fits failed out of a total of 40.
+The score on these train-test partitions for these parameters will be set to nan.
+If these failures are not expected, you can try to debug them by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+20 fits failed with the following error:
+Traceback (most recent call last):
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 855, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\pipeline.py", line 645, in fit
+    self._final_estimator.fit(Xt, y, **last_step_params["fit"])
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\discriminant_analysis.py", line 1142, in fit
+    raise linalg.LinAlgError(
+    ...<3 lines>...
+    )
+numpy.linalg.LinAlgError: The covariance matrix of class 0 is not full rank. Increase the value of `shrinkage` to reduce the collinearity.
+
+  warnings.warn(some_fits_failed_message, FitFailedWarning)
+D:\Download\机器学习\.venv\Lib\site-packages\sklearn\model_selection\_search.py:1237: UserWarning: One or more of the test scores are non-finite: [ nan 0.71  nan 0.71  nan 0.71  nan 0.71]
+  warnings.warn(
+[8/80] bdr_full_eig  n=100   trial2 test=0.7570 cv=0.71 (0.4s) {'reg_param': 0.001, 'shrinkage': 0.1}
+[9/80] knn1          n=100   trial1 test=0.7225 cv=None (0.0s) {}
+[10/80] knn1          n=100   trial2 test=0.7050 cv=None (0.0s) {}
+[11/80] svm_rbf       n=200   trial1 test=0.8535 cv=0.835 (0.9s) {'C': 10.0, 'gamma': 0.006357599270763157}
+[12/80] svm_rbf       n=200   trial2 test=0.8535 cv=0.84 (0.8s) {'C': 10.0, 'gamma': 0.021670369087087554}
+[13/80] svm_linear    n=200   trial1 test=0.8275 cv=0.785 (0.3s) {'C': 0.1}
+[14/80] svm_linear    n=200   trial2 test=0.8005 cv=0.82 (0.3s) {'C': 1.0}
+[15/80] logreg        n=200   trial1 test=0.8140 cv=0.805 (0.5s) {'C': 0.1}
+[16/80] logreg        n=200   trial2 test=0.8080 cv=0.825 (0.5s) {'C': 1.0}
+D:\Download\机器学习\.venv\Lib\site-packages\sklearn\model_selection\_validation.py:493: FitFailedWarning: 
+20 fits failed out of a total of 40.
+The score on these train-test partitions for these parameters will be set to nan.
+If these failures are not expected, you can try to debug them by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+20 fits failed with the following error:
+Traceback (most recent call last):
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 855, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\pipeline.py", line 645, in fit
+    self._final_estimator.fit(Xt, y, **last_step_params["fit"])
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\discriminant_analysis.py", line 1142, in fit
+    raise linalg.LinAlgError(
+    ...<3 lines>...
+    )
+numpy.linalg.LinAlgError: The covariance matrix of class 0 is not full rank. Increase the value of `shrinkage` to reduce the collinearity.
+
+  warnings.warn(some_fits_failed_message, FitFailedWarning)
+D:\Download\机器学习\.venv\Lib\site-packages\sklearn\model_selection\_search.py:1237: UserWarning: One or more of the test scores are non-finite: [ nan 0.84  nan 0.84  nan 0.84  nan 0.84]
+  warnings.warn(
+[17/80] bdr_full_eig  n=200   trial1 test=0.8695 cv=0.84 (0.4s) {'reg_param': 0.001, 'shrinkage': 0.1}
+D:\Download\机器学习\.venv\Lib\site-packages\sklearn\model_selection\_validation.py:493: FitFailedWarning: 
+20 fits failed out of a total of 40.
+The score on these train-test partitions for these parameters will be set to nan.
+If these failures are not expected, you can try to debug them by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+20 fits failed with the following error:
+Traceback (most recent call last):
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 855, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\pipeline.py", line 645, in fit
+    self._final_estimator.fit(Xt, y, **last_step_params["fit"])
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\discriminant_analysis.py", line 1142, in fit
+    raise linalg.LinAlgError(
+    ...<3 lines>...
+    )
+numpy.linalg.LinAlgError: The covariance matrix of class 0 is not full rank. Increase the value of `shrinkage` to reduce the collinearity.
+
+  warnings.warn(some_fits_failed_message, FitFailedWarning)
+D:\Download\机器学习\.venv\Lib\site-packages\sklearn\model_selection\_search.py:1237: UserWarning: One or more of the test scores are non-finite: [ nan 0.85  nan 0.85  nan 0.85  nan 0.85]
+  warnings.warn(
+[18/80] bdr_full_eig  n=200   trial2 test=0.8455 cv=0.85 (0.4s) {'reg_param': 0.001, 'shrinkage': 0.1}
+[19/80] knn1          n=200   trial1 test=0.8025 cv=None (0.0s) {}
+[20/80] knn1          n=200   trial2 test=0.7800 cv=None (0.0s) {}
+[21/80] svm_rbf       n=400   trial1 test=0.9030 cv=0.9125 (1.3s) {'C': 10.0, 'gamma': 0.022042242598841143}
+[22/80] svm_rbf       n=400   trial2 test=0.9025 cv=0.9125 (1.4s) {'C': 10.0, 'gamma': 0.022119568459723543}
+[23/80] svm_linear    n=400   trial1 test=0.8650 cv=0.8625 (0.5s) {'C': 0.1}
+[24/80] svm_linear    n=400   trial2 test=0.8570 cv=0.8725 (0.5s) {'C': 0.1}
+[25/80] logreg        n=400   trial1 test=0.8575 cv=0.85 (0.6s) {'C': 0.1}
+[26/80] logreg        n=400   trial2 test=0.8460 cv=0.855 (0.6s) {'C': 0.1}
+D:\Download\机器学习\.venv\Lib\site-packages\sklearn\model_selection\_validation.py:493: FitFailedWarning: 
+20 fits failed out of a total of 40.
+The score on these train-test partitions for these parameters will be set to nan.
+If these failures are not expected, you can try to debug them by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+20 fits failed with the following error:
+Traceback (most recent call last):
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 855, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\pipeline.py", line 645, in fit
+    self._final_estimator.fit(Xt, y, **last_step_params["fit"])
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\discriminant_analysis.py", line 1142, in fit
+    raise linalg.LinAlgError(
+    ...<3 lines>...
+    )
+numpy.linalg.LinAlgError: The covariance matrix of class 0 is not full rank. Increase the value of `shrinkage` to reduce the collinearity.
+
+  warnings.warn(some_fits_failed_message, FitFailedWarning)
+D:\Download\机器学习\.venv\Lib\site-packages\sklearn\model_selection\_search.py:1237: UserWarning: One or more of the test scores are non-finite: [  nan 0.895   nan 0.895   nan 0.895   nan 0.895]
+  warnings.warn(
+[27/80] bdr_full_eig  n=400   trial1 test=0.9065 cv=0.895 (0.5s) {'reg_param': 0.001, 'shrinkage': 0.1}
+D:\Download\机器学习\.venv\Lib\site-packages\sklearn\model_selection\_validation.py:493: FitFailedWarning: 
+20 fits failed out of a total of 40.
+The score on these train-test partitions for these parameters will be set to nan.
+If these failures are not expected, you can try to debug them by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+20 fits failed with the following error:
+Traceback (most recent call last):
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 855, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\pipeline.py", line 645, in fit
+    self._final_estimator.fit(Xt, y, **last_step_params["fit"])
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\discriminant_analysis.py", line 1142, in fit
+    raise linalg.LinAlgError(
+    ...<3 lines>...
+    )
+numpy.linalg.LinAlgError: The covariance matrix of class 0 is not full rank. Increase the value of `shrinkage` to reduce the collinearity.
+
+  warnings.warn(some_fits_failed_message, FitFailedWarning)
+D:\Download\机器学习\.venv\Lib\site-packages\sklearn\model_selection\_search.py:1237: UserWarning: One or more of the test scores are non-finite: [  nan 0.925   nan 0.925   nan 0.925   nan 0.925]
+  warnings.warn(
+[28/80] bdr_full_eig  n=400   trial2 test=0.9150 cv=0.925 (0.6s) {'reg_param': 0.001, 'shrinkage': 0.1}
+[29/80] knn1          n=400   trial1 test=0.8655 cv=None (0.0s) {}
+[30/80] knn1          n=400   trial2 test=0.8520 cv=None (0.0s) {}
+[31/80] svm_rbf       n=500   trial1 test=0.9285 cv=0.896 (1.6s) {'C': 10.0, 'gamma': 0.022399554604803553}
+[32/80] svm_rbf       n=500   trial2 test=0.9040 cv=0.924 (1.6s) {'C': 10.0, 'gamma': 0.022224114131682772}
+[33/80] svm_linear    n=500   trial1 test=0.8835 cv=0.85 (0.6s) {'C': 0.1}
+[34/80] svm_linear    n=500   trial2 test=0.8485 cv=0.882 (0.6s) {'C': 0.01}
+[35/80] logreg        n=500   trial1 test=0.8705 cv=0.83 (0.7s) {'C': 0.1}
+[36/80] logreg        n=500   trial2 test=0.8285 cv=0.858 (0.7s) {'C': 0.1}
+D:\Download\机器学习\.venv\Lib\site-packages\sklearn\model_selection\_validation.py:493: FitFailedWarning: 
+20 fits failed out of a total of 40.
+The score on these train-test partitions for these parameters will be set to nan.
+If these failures are not expected, you can try to debug them by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+20 fits failed with the following error:
+Traceback (most recent call last):
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 855, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\pipeline.py", line 645, in fit
+    self._final_estimator.fit(Xt, y, **last_step_params["fit"])
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\discriminant_analysis.py", line 1142, in fit
+    raise linalg.LinAlgError(
+    ...<3 lines>...
+    )
+numpy.linalg.LinAlgError: The covariance matrix of class 0 is not full rank. Increase the value of `shrinkage` to reduce the collinearity.
+
+  warnings.warn(some_fits_failed_message, FitFailedWarning)
+D:\Download\机器学习\.venv\Lib\site-packages\sklearn\model_selection\_search.py:1237: UserWarning: One or more of the test scores are non-finite: [  nan 0.908   nan 0.908   nan 0.908   nan 0.908]
+  warnings.warn(
+[37/80] bdr_full_eig  n=500   trial1 test=0.9270 cv=0.908 (0.6s) {'reg_param': 0.001, 'shrinkage': 0.1}
+D:\Download\机器学习\.venv\Lib\site-packages\sklearn\model_selection\_validation.py:493: FitFailedWarning: 
+20 fits failed out of a total of 40.
+The score on these train-test partitions for these parameters will be set to nan.
+If these failures are not expected, you can try to debug them by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+20 fits failed with the following error:
+Traceback (most recent call last):
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 855, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\pipeline.py", line 645, in fit
+    self._final_estimator.fit(Xt, y, **last_step_params["fit"])
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\discriminant_analysis.py", line 1142, in fit
+    raise linalg.LinAlgError(
+    ...<3 lines>...
+    )
+numpy.linalg.LinAlgError: The covariance matrix of class 0 is not full rank. Increase the value of `shrinkage` to reduce the collinearity.
+
+  warnings.warn(some_fits_failed_message, FitFailedWarning)
+D:\Download\机器学习\.venv\Lib\site-packages\sklearn\model_selection\_search.py:1237: UserWarning: One or more of the test scores are non-finite: [  nan 0.908   nan 0.908   nan 0.908   nan 0.908]
+  warnings.warn(
+[38/80] bdr_full_eig  n=500   trial2 test=0.9310 cv=0.908 (0.6s) {'reg_param': 0.001, 'shrinkage': 0.1}
+[39/80] knn1          n=500   trial1 test=0.8785 cv=None (0.0s) {}
+[40/80] knn1          n=500   trial2 test=0.8600 cv=None (0.0s) {}
+[41/80] svm_rbf       n=700   trial1 test=0.9195 cv=0.9186 (2.4s) {'C': 10.0, 'gamma': 0.022690578047104424}
+[42/80] svm_rbf       n=700   trial2 test=0.9295 cv=0.9243 (2.4s) {'C': 10.0, 'gamma': 0.022419602099614074}
+[43/80] svm_linear    n=700   trial1 test=0.8810 cv=0.8757 (0.8s) {'C': 0.01}
+[44/80] svm_linear    n=700   trial2 test=0.8700 cv=0.8843 (0.8s) {'C': 0.1}
+[45/80] logreg        n=700   trial1 test=0.8625 cv=0.8614 (0.8s) {'C': 0.1}
+[46/80] logreg        n=700   trial2 test=0.8555 cv=0.87 (0.9s) {'C': 0.1}
+D:\Download\机器学习\.venv\Lib\site-packages\sklearn\model_selection\_validation.py:493: FitFailedWarning: 
+20 fits failed out of a total of 40.
+The score on these train-test partitions for these parameters will be set to nan.
+If these failures are not expected, you can try to debug them by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+20 fits failed with the following error:
+Traceback (most recent call last):
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 855, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\pipeline.py", line 645, in fit
+    self._final_estimator.fit(Xt, y, **last_step_params["fit"])
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\discriminant_analysis.py", line 1142, in fit
+    raise linalg.LinAlgError(
+    ...<3 lines>...
+    )
+numpy.linalg.LinAlgError: The covariance matrix of class 1 is not full rank. Increase the value of `shrinkage` to reduce the collinearity.
+
+  warnings.warn(some_fits_failed_message, FitFailedWarning)
+D:\Download\机器学习\.venv\Lib\site-packages\sklearn\model_selection\_search.py:1237: UserWarning: One or more of the test scores are non-finite: [       nan 0.92571429        nan 0.92571429        nan 0.92571429
+        nan 0.92571429]
+  warnings.warn(
+[47/80] bdr_full_eig  n=700   trial1 test=0.9320 cv=0.9257 (0.8s) {'reg_param': 0.001, 'shrinkage': 0.1}
+D:\Download\机器学习\.venv\Lib\site-packages\sklearn\model_selection\_validation.py:493: FitFailedWarning: 
+20 fits failed out of a total of 40.
+The score on these train-test partitions for these parameters will be set to nan.
+If these failures are not expected, you can try to debug them by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+20 fits failed with the following error:
+Traceback (most recent call last):
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 855, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\pipeline.py", line 645, in fit
+    self._final_estimator.fit(Xt, y, **last_step_params["fit"])
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\discriminant_analysis.py", line 1142, in fit
+    raise linalg.LinAlgError(
+    ...<3 lines>...
+    )
+numpy.linalg.LinAlgError: The covariance matrix of class 1 is not full rank. Increase the value of `shrinkage` to reduce the collinearity.
+
+  warnings.warn(some_fits_failed_message, FitFailedWarning)
+D:\Download\机器学习\.venv\Lib\site-packages\sklearn\model_selection\_search.py:1237: UserWarning: One or more of the test scores are non-finite: [       nan 0.92571429        nan 0.92571429        nan 0.92571429
+        nan 0.92571429]
+  warnings.warn(
+[48/80] bdr_full_eig  n=700   trial2 test=0.9400 cv=0.9257 (0.8s) {'reg_param': 0.001, 'shrinkage': 0.1}
+[49/80] knn1          n=700   trial1 test=0.8900 cv=None (0.0s) {}
+[50/80] knn1          n=700   trial2 test=0.8895 cv=None (0.0s) {}
+[51/80] svm_rbf       n=1000  trial1 test=0.9400 cv=0.931 (3.4s) {'C': 10.0, 'gamma': 0.022470124206877575}
+[52/80] svm_rbf       n=1000  trial2 test=0.9285 cv=0.928 (3.5s) {'C': 10.0, 'gamma': 0.022481409392155514}
+[53/80] svm_linear    n=1000  trial1 test=0.8940 cv=0.9 (1.1s) {'C': 0.1}
+[54/80] svm_linear    n=1000  trial2 test=0.8870 cv=0.883 (1.1s) {'C': 0.1}
+[55/80] logreg        n=1000  trial1 test=0.8775 cv=0.882 (1.1s) {'C': 0.1}
+[56/80] logreg        n=1000  trial2 test=0.8680 cv=0.87 (1.1s) {'C': 0.1}
+D:\Download\机器学习\.venv\Lib\site-packages\sklearn\model_selection\_validation.py:493: FitFailedWarning: 
+20 fits failed out of a total of 40.
+The score on these train-test partitions for these parameters will be set to nan.
+If these failures are not expected, you can try to debug them by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+20 fits failed with the following error:
+Traceback (most recent call last):
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 855, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\pipeline.py", line 645, in fit
+    self._final_estimator.fit(Xt, y, **last_step_params["fit"])
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\discriminant_analysis.py", line 1142, in fit
+    raise linalg.LinAlgError(
+    ...<3 lines>...
+    )
+numpy.linalg.LinAlgError: The covariance matrix of class 1 is not full rank. Increase the value of `shrinkage` to reduce the collinearity.
+
+  warnings.warn(some_fits_failed_message, FitFailedWarning)
+D:\Download\机器学习\.venv\Lib\site-packages\sklearn\model_selection\_search.py:1237: UserWarning: One or more of the test scores are non-finite: [  nan 0.942   nan 0.942   nan 0.942   nan 0.942]
+  warnings.warn(
+[57/80] bdr_full_eig  n=1000  trial1 test=0.9490 cv=0.942 (0.9s) {'reg_param': 0.001, 'shrinkage': 0.1}
+D:\Download\机器学习\.venv\Lib\site-packages\sklearn\model_selection\_validation.py:493: FitFailedWarning: 
+20 fits failed out of a total of 40.
+The score on these train-test partitions for these parameters will be set to nan.
+If these failures are not expected, you can try to debug them by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+20 fits failed with the following error:
+Traceback (most recent call last):
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 855, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\pipeline.py", line 645, in fit
+    self._final_estimator.fit(Xt, y, **last_step_params["fit"])
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\discriminant_analysis.py", line 1142, in fit
+    raise linalg.LinAlgError(
+    ...<3 lines>...
+    )
+numpy.linalg.LinAlgError: The covariance matrix of class 1 is not full rank. Increase the value of `shrinkage` to reduce the collinearity.
+
+  warnings.warn(some_fits_failed_message, FitFailedWarning)
+D:\Download\机器学习\.venv\Lib\site-packages\sklearn\model_selection\_search.py:1237: UserWarning: One or more of the test scores are non-finite: [  nan 0.943   nan 0.943   nan 0.943   nan 0.943]
+  warnings.warn(
+[58/80] bdr_full_eig  n=1000  trial2 test=0.9490 cv=0.943 (0.9s) {'reg_param': 0.001, 'shrinkage': 0.1}
+[59/80] knn1          n=1000  trial1 test=0.9055 cv=None (0.0s) {}
+[60/80] knn1          n=1000  trial2 test=0.8920 cv=None (0.0s) {}
+[61/80] svm_rbf       n=1500  trial1 test=0.9480 cv=0.946 (5.6s) {'C': 10.0, 'gamma': 0.02280282948794532}
+[62/80] svm_rbf       n=1500  trial2 test=0.9395 cv=0.9487 (5.5s) {'C': 10.0, 'gamma': 0.022561569147219438}
+[63/80] svm_linear    n=1500  trial1 test=0.9010 cv=0.898 (1.6s) {'C': 0.01}
+[64/80] svm_linear    n=1500  trial2 test=0.8965 cv=0.9107 (1.6s) {'C': 0.1}
+[65/80] logreg        n=1500  trial1 test=0.8850 cv=0.8793 (1.7s) {'C': 0.1}
+[66/80] logreg        n=1500  trial2 test=0.8815 cv=0.8867 (1.6s) {'C': 0.1}
+[67/80] bdr_full_eig  n=1500  trial1 test=0.9505 cv=0.9493 (1.2s) {'reg_param': 0.001, 'shrinkage': 0.1}
+D:\Download\机器学习\.venv\Lib\site-packages\sklearn\model_selection\_validation.py:493: FitFailedWarning: 
+16 fits failed out of a total of 40.
+The score on these train-test partitions for these parameters will be set to nan.
+If these failures are not expected, you can try to debug them by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+16 fits failed with the following error:
+Traceback (most recent call last):
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 855, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\pipeline.py", line 645, in fit
+    self._final_estimator.fit(Xt, y, **last_step_params["fit"])
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "D:\Download\机器学习\.venv\Lib\site-packages\sklearn\discriminant_analysis.py", line 1142, in fit
+    raise linalg.LinAlgError(
+    ...<3 lines>...
+    )
+numpy.linalg.LinAlgError: The covariance matrix of class 1 is not full rank. Increase the value of `shrinkage` to reduce the collinearity.
+
+  warnings.warn(some_fits_failed_message, FitFailedWarning)
+D:\Download\机器学习\.venv\Lib\site-packages\sklearn\model_selection\_search.py:1237: UserWarning: One or more of the test scores are non-finite: [ nan 0.96  nan 0.96  nan 0.96  nan 0.96]
+  warnings.warn(
+[68/80] bdr_full_eig  n=1500  trial2 test=0.9545 cv=0.96 (1.1s) {'reg_param': 0.001, 'shrinkage': 0.1}
+[69/80] knn1          n=1500  trial1 test=0.9195 cv=None (0.0s) {}
+[70/80] knn1          n=1500  trial2 test=0.9195 cv=None (0.0s) {}
+[71/80] svm_rbf       n=2000  trial1 test=0.9490 cv=0.9545 (8.1s) {'C': 10.0, 'gamma': 0.022768538266991434}
+[72/80] svm_rbf       n=2000  trial2 test=0.9480 cv=0.9495 (8.1s) {'C': 10.0, 'gamma': 0.0225538729429535}
+[73/80] svm_linear    n=2000  trial1 test=0.9115 cv=0.9095 (2.3s) {'C': 0.1}
+[74/80] svm_linear    n=2000  trial2 test=0.8925 cv=0.912 (2.3s) {'C': 0.01}
+[75/80] logreg        n=2000  trial1 test=0.8940 cv=0.8925 (2.5s) {'C': 0.1}
+[76/80] logreg        n=2000  trial2 test=0.8815 cv=0.8945 (2.5s) {'C': 0.1}
+[77/80] bdr_full_eig  n=2000  trial1 test=0.9460 cv=0.9515 (1.3s) {'reg_param': 0.001, 'shrinkage': 0.1}
+[78/80] bdr_full_eig  n=2000  trial2 test=0.9590 cv=0.9565 (1.4s) {'reg_param': 0.001, 'shrinkage': 0.1}
+[79/80] knn1          n=2000  trial1 test=0.9295 cv=None (0.0s) {}
+[80/80] knn1          n=2000  trial2 test=0.9245 cv=None (0.0s) {}
